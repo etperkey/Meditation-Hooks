@@ -8,7 +8,8 @@ Plays a random meditation bell sound when Claude finishes working (Stop event) o
 - Updates terminal title with status indicators:
   - Working: rotating arrows emoji
   - Stopped: dove emoji
-  - Notification: bell emoji
+  - Idle/waiting: bell emoji
+  - Needs input (mid-prompt): question mark emoji
 - Sounds play in background without stealing window focus
 
 ## Installation
