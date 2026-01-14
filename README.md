@@ -1,22 +1,41 @@
 # Meditation Hooks for Claude Code
 
-Plays a random meditation bell sound when Claude finishes working (Stop event) or needs your attention (Notification event). Also updates the terminal title with status emojis.
+Plays random meditation/world instrument sounds when Claude finishes working or needs your attention. Also shows **status emojis in your PowerShell tab** so you know Claude's state at a glance.
 
 ## Features
 
+### Tab Emoji Indicators
+Your terminal tab shows Claude's current status:
+| Status | Emoji | When |
+|--------|-------|------|
+| Working | 🔄 | Claude is processing/using tools |
+| Stopped | 🕊️ | Claude finished responding |
+| Idle | 🔔 | Waiting for your input at prompt |
+| Needs Input | ❓ | Claude asked you a question mid-task |
+
+### Notification Sounds
 - Plays one of 11 meditation/world instrument sounds randomly
-- Updates terminal title with status indicators:
-  - Working: rotating arrows emoji
-  - Stopped: dove emoji
-  - Idle/waiting: bell emoji
-  - Needs input (mid-prompt): question mark emoji
+- Triggers on Stop, idle prompt, and mid-conversation questions
 - Sounds play in background without stealing window focus
 
-## Installation
+## Quick Install
+
+Run the installer script:
+
+```powershell
+.\install.ps1
+```
+
+This will:
+1. Copy sounds to `%USERPROFILE%\.claude\sounds`
+2. Configure hooks in `%USERPROFILE%\.claude\settings.json`
+3. Backup any existing settings
+
+Restart Claude Code after installing.
+
+## Manual Installation
 
 ### 1. Copy the sounds folder
-
-Copy the `sounds` folder to your Claude config directory:
 
 ```powershell
 Copy-Item -Recurse ".\sounds" "$env:USERPROFILE\.claude\sounds"
@@ -24,14 +43,7 @@ Copy-Item -Recurse ".\sounds" "$env:USERPROFILE\.claude\sounds"
 
 ### 2. Update your settings.json
 
-Open `%USERPROFILE%\.claude\settings.json` and merge the hooks from `settings-template.json`.
-
-Replace `{{SOUNDS_PATH}}` with the actual path, e.g.:
-```
-C:\Users\YourUsername\.claude\sounds
-```
-
-Or copy the template and do a find-replace:
+Copy the template with your path:
 ```powershell
 $template = Get-Content ".\settings-template.json" -Raw
 $template = $template -replace '\{\{SOUNDS_PATH\}\}', "$env:USERPROFILE\.claude\sounds"
