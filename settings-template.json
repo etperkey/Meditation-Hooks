@@ -1,0 +1,43 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -Command \"$e=[char]27; Write-Host \\\"$e]0;$([char]::ConvertFromUtf32(0x1F504)) Claude$e\\\\\\\" -NoNewline\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -Command \"$e=[char]27; Write-Host \\\"$e]0;$([char]::ConvertFromUtf32(0x1F54A)) Claude$e\\\\\\\" -NoNewline\""
+          },
+          {
+            "type": "command",
+            "command": "wscript.exe \"{{SOUNDS_PATH}}\\play-sound-hidden.vbs\""
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "idle_prompt",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -Command \"$e=[char]27; Write-Host \\\"$e]0;$([char]::ConvertFromUtf32(0x1F514)) Claude$e\\\\\\\" -NoNewline\""
+          },
+          {
+            "type": "command",
+            "command": "wscript.exe \"{{SOUNDS_PATH}}\\play-sound-hidden.vbs\""
+          }
+        ]
+      }
+    ]
+  }
+}
