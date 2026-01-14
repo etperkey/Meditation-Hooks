@@ -39,11 +39,25 @@
         ]
       },
       {
-        "matcher": "user_input",
+        "matcher": "permission_prompt",
         "hooks": [
           {
             "type": "command",
             "command": "powershell -NoProfile -ExecutionPolicy Bypass -Command \"$e=[char]27; Write-Host \\\"$e]0;$([char]::ConvertFromUtf32(0x2753)) Claude$e\\\\\\\" -NoNewline\""
+          },
+          {
+            "type": "command",
+            "command": "wscript.exe \"{{SOUNDS_PATH}}\\play-sound-hidden.vbs\""
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -Command \"$e=[char]27; Write-Host \\\"$e]0;$([char]::ConvertFromUtf32(0x2705)) Claude$e\\\\\\\" -NoNewline\""
           },
           {
             "type": "command",

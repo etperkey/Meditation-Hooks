@@ -8,19 +8,19 @@ $soundsDir = $PSScriptRoot
 # Get all sound files and pick randomly if not specified
 if (-not $soundFile) {
     $sounds = @(
-        # Temple/Meditation bells
-        "1-temple-bell.mp3",
-        "2-japanese-temple-bell.mp3",
-        "3-lovely-meditation-bell.mp3",
-        "4-meditation-bell.mp3",
-        "5-zen-meditation-bell.mp3",
-        # World instruments
-        "duduk-armenia.mp3",
-        "duduk-eastern-morning.mp3",
-        "oud-kanun-nai.mp3",
-        "kanun-nai.mp3",
-        "rain-stick.mp3",
-        "bansuri-meditation.mp3"
+        # Original short sounds
+        "1-temple-bell.mp3",                    # 5 sec
+        "2-japanese-temple-bell.mp3",           # 3 sec
+        # Trimmed versions (4 sec each)
+        "3-lovely-meditation-bell-short.mp3",
+        "4-meditation-bell-short.mp3",
+        "5-zen-meditation-bell-short.mp3",
+        "duduk-eastern-morning-short.mp3",
+        "rain-stick-short.mp3",
+        "duduk-armenia-short.mp3",
+        "kanun-nai-short.mp3",
+        "bansuri-meditation-short.mp3",
+        "oud-kanun-nai-short.mp3"
     )
     $soundFile = $sounds | Get-Random
 }
