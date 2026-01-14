@@ -4,7 +4,7 @@ Plays a random meditation bell sound when Claude finishes working (Stop event) o
 
 ## Features
 
-- Plays one of 5 meditation bell sounds randomly
+- Plays one of 11 meditation/world instrument sounds randomly
 - Updates terminal title with status indicators:
   - Working: rotating arrows emoji
   - Stopped: dove emoji
@@ -39,11 +39,20 @@ $template | Set-Content "$env:USERPROFILE\.claude\settings.json"
 
 ## Included Sounds
 
+### Temple/Meditation Bells
 - 1-temple-bell.mp3
 - 2-japanese-temple-bell.mp3
 - 3-lovely-meditation-bell.mp3
 - 4-meditation-bell.mp3
 - 5-zen-meditation-bell.mp3
+
+### World Instruments
+- duduk-armenia.mp3 - Armenian duduk (archive.org)
+- duduk-eastern-morning.mp3 - Short duduk logo (archive.org)
+- oud-kanun-nai.mp3 - Oud, kanun and nai ensemble (archive.org)
+- kanun-nai.mp3 - Kanun and nai duet (archive.org)
+- rain-stick.mp3 - Rain stick (bigsoundbank.com, CC0)
+- bansuri-meditation.mp3 - Indian bansuri flute (archive.org)
 
 ## How It Works
 
